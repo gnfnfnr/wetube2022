@@ -7,10 +7,16 @@
     "type": "git",
     "url": "git+https://github.com/gnfnfnr/wetube2022.git"
   },
+  "scripts": {
+    "start": "node index.js"
+  },
   "author": "gnfnfnr",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/gnfnfnr/wetube2022/issues"
   },
-  "homepage": "https://github.com/gnfnfnr/wetube2022#readme"
+  "homepage": "https://github.com/gnfnfnr/wetube2022#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
 }
