@@ -8,7 +8,7 @@
     "url": "git+https://github.com/gnfnfnr/wetube2022.git"
   },
   "scripts": {
-    "start": "node index.js"
+    "dev": "nodemon --exec babel-node src/server.js"
   },
   "author": "gnfnfnr",
   "license": "ISC",
@@ -17,6 +17,13 @@
   },
   "homepage": "https://github.com/gnfnfnr/wetube2022#readme",
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/node": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "nodemon": "^3.1.9"
   }
 }
