@@ -1,8 +1,19 @@
 html(lang="ko")
-    head
-        meta(charset="UTF-8", lang="ko")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title wetube 
-    body 
-        block content
-    include partials/footer.pug
+  head
+    meta(charset="UTF-8", lang="ko")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title #{ pagetitle } wetube
+  body
+    main
+      h1= pagetitle
+      header
+        if fakeuser.loggedIn
+          small= fakeuser.username
+        nav
+          ul
+            if fakeuser.loggedIn
+              span logout
+            else
+              a(href="/login") login
+      block content
+  include partials/footer.pug
