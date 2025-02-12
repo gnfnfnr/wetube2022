@@ -11,15 +11,9 @@ const logger = morgan("dev");
 app.use(logger);
 app.set("view engine", "pug");
 app.set("views", process.cwd() + "/src/views");
+app.use(express.urlencoded({ extended: true }));
 app.use("/", globalRouter);
 app.use("/users", userRouter);
 app.use("/videos", videoRouter);
 
-//application 설정 - request에 어떻게 반응할 것인지
-
-// application 외부와 연결
-const PORT = 4000;
-const handleListening = () =>
-  console.log(`server listening on port http://localhost:${PORT}`);
-
-app.listen(PORT, handleListening);
+export default app;

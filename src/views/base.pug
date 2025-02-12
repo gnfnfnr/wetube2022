@@ -2,18 +2,16 @@ html(lang="ko")
   head
     meta(charset="UTF-8", lang="ko")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="https://unpkg.com/mvp.css")
     title #{ pagetitle } wetube
   body
     main
-      h1= pagetitle
       header
-        if fakeuser.loggedIn
-          small= fakeuser.username
-        nav
-          ul
-            if fakeuser.loggedIn
-              span logout
-            else
-              a(href="/login") login
+      h1= pagetitle
+      nav
+        ul
+          li
+            a(href="/videos/upload") upload video
+
       block content
   include partials/footer.pug
