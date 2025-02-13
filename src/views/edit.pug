@@ -9,4 +9,19 @@ block content
         value=video.title,
         required
       )
+      input(
+        name="description",
+        placeholder="description",
+        required,
+        type="text",
+        value=video.description,
+        minlength=20
+      )
+      input(
+        name="hastags",
+        placeholder="hastags, separated by comma",
+        required,
+        value=video.hastags.join().replace(/#\s*/g, ""),
+        type="text"
+      )
       input(value="save", type="submit")

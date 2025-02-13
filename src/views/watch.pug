@@ -1,6 +1,10 @@
 extends base.pug
 
 block content
-  h1= video.title
-  h3 #{ video.views } view#{ video.views > 1 ? "s": "" }
-  a(href=`${video.id}/edit`) Edit page &rarr;
+  div
+    p= video.description
+    small= video.createdAt
+    div
+      each tag in video.hastags
+        span= tag
+    a(href=`${video.id}/edit`) Edit page &rarr;
