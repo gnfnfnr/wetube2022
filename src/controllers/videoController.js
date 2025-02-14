@@ -77,3 +77,22 @@ export const postUpload = async (req, res) => {
     });
   }
 };
+
+export const deleteVideo = async (req, res) => {
+  const { id } = req.params;
+  await Video.findByIdAndDelete(id);
+  return res.redirect("/");
+};
+
+export const searchVideo = async (req, res) => {
+  const { keyword } = req.query;
+  console.log(keyword);
+  let videos = [];
+  if (keyword) {
+    videos = await Video.find({
+      title: { $regex: new RegExp(keyword, "i") },
+    });
+  }
+  console.log(videos);
+  return res.render("search", { pagetitle: "search video", videos });
+};
