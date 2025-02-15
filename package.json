@@ -8,7 +8,8 @@
     "url": "git+https://github.com/gnfnfnr/wetube2022.git"
   },
   "scripts": {
-    "dev": "nodemon --exec babel-node src/init.js"
+    "dev:server": "nodemon",
+    "dev:assets": "webpack"
   },
   "author": "gnfnfnr",
   "license": "ISC",
@@ -17,17 +18,25 @@
   },
   "homepage": "https://github.com/gnfnfnr/wetube2022#readme",
   "dependencies": {
+    "css-loader": "^7.1.2",
     "express": "^4.18.1",
     "mongoose": "^8.10.0",
     "morgan": "^1.10.0",
-    "pug": "^3.0.3"
+    "pug": "^3.0.3",
+    "style-loader": "^4.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.26.0",
+    "@babel/core": "^7.26.8",
     "@babel/node": "^7.26.0",
-    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-env": "^7.26.8",
     "@prettier/plugin-pug": "^3.2.1",
+    "babel-loader": "^9.2.1",
+    "mini-css-extract-plugin": "^2.9.2",
     "nodemon": "^3.1.9",
-    "prettier": "^3.5.0"
+    "prettier": "^3.5.0",
+    "sass": "^1.85.0",
+    "sass-loader": "^16.0.5",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1"
   }
 }
